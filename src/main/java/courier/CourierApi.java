@@ -33,7 +33,7 @@ public class CourierApi extends ScooterRent {
     public ValidatableResponse courierDelete(String id) {
         return given()
                 .spec(ScooterRent.requestSpecification())
-                .delete(COURIER_API + id)
+                .delete(COURIER_API + '/' + id)
                 .then();
     }
 

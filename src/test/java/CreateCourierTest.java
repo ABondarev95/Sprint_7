@@ -46,7 +46,6 @@ public class CreateCourierTest {
     @DisplayName("Регистрация двух одинаковых курьеров")
     @Description("Проверка, что нельзя создать нового курьера, если вводимый логин уже есть в системе")
     public void duplicateCourierTest() {
-        Courier courier = new Courier("Petrov123", "123", "Petr");
         ValidatableResponse response = courierApi.courierReg(courier);
         response.statusCode(SC_CREATED);
         ValidatableResponse loginResponse = courierApi.courierLogin(courier);
