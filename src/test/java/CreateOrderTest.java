@@ -44,7 +44,15 @@ public class CreateOrderTest{
         @DisplayName("Создание заказа с выбором цвета")
         @Description("Проверка, что можно создать заказ на: серый цвет, черный цвет, выбор двух цветов, без выбора цвета")
         public void paramCreateOrderTest() {
-            Order order = new Order(FIRST_NAME_ORDERS, lAST_NAME_ORDERS, ADDRESS, METRO_STATION, PHONE, RENT_TIME, DELIVERY_DATE, COMMENT, color);
+            Order order = new Order(FIRST_NAME_ORDERS,
+                    lAST_NAME_ORDERS,
+                    ADDRESS,
+                    METRO_STATION,
+                    PHONE,
+                    RENT_TIME,
+                    DELIVERY_DATE,
+                    COMMENT,
+                    color);
             ValidatableResponse response = orderApi.createOrder(order);
             response.assertThat().statusCode(SC_CREATED).and().body("track", notNullValue());
         }

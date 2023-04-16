@@ -15,6 +15,6 @@ public class OrderApi extends ScooterRent {
                 .when()
                 .post(ORDERS_API)
                 .then();
-
     }
+
 }
